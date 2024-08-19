@@ -26,8 +26,20 @@
 			.map((token) => getComputedStyle(element).getPropertyValue(`--tg-theme-${kebabCase(token)}`));
 	}
 
+	let MiniApp;
+
 	onMount(async () => {
 		await import('@twa-dev/sdk');
+		MiniApp = window.Telegram.WebApp;
+		MiniApp.ready();
+		MiniApp.expand();
+
+		MiniApp.onEvent('themeChanged', function() {
+			console.log('theme changed');
+		  const element = document.querySelector('html');
+		  console.log(MiniApp.themeParams());
+	    colors = getColors(element);
+		});
 
 		const element = document.querySelector('html');
 		colors = getColors(element);
