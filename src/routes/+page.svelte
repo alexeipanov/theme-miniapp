@@ -26,7 +26,9 @@
 			.map((token) => getComputedStyle(element).getPropertyValue(`--tg-theme-${kebabCase(token)}`));
 	}
 
-	onMount(() => {
+	onMount(async () => {
+		await import('@twa-dev/sdk');
+
 		const element = document.querySelector('html');
 		colors = getColors(element);
 
