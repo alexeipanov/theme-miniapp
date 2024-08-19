@@ -34,19 +34,11 @@
 		MiniApp.ready();
 		MiniApp.expand();
 
-		MiniApp.onEvent('themeChanged', function() {
-			console.log('theme changed');
-		  const element = document.querySelector('html');
-		  console.log(MiniApp.themeParams());
-	    colors = getColors(element);
-		});
-
 		const element = document.querySelector('html');
 		colors = getColors(element);
 
-		on('theme_changed', () => {
-			const element = document.querySelector('html');
-	    colors = getColors(element);
+		on('theme_changed', (event) => {
+	    colors = Object.values(event.theme_params);
 	  });
 	});
 
