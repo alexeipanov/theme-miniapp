@@ -4,7 +4,7 @@ const config = {
   kit: {
     adapter: adapter({
       pages: 'docs',
-      assets: 'docs',
+      assets: 'docs/assets',
       fallback: 'index.html',
       precompress: false,
       strict: true
