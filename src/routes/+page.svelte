@@ -58,6 +58,7 @@
 		</div>
 	{/each}
 </div>
+<footer><a href="https://github.com/alexeipanov/theme-miniapp" style="color: var(--tg-theme-link-color);">https://github.com/alexeipanov/theme-miniapp</a></footer>
 
 <style>
 	.thumb {
@@ -69,5 +70,10 @@
 	.color {
 		font-family: monospace;
 		color: #999;
+	}
+
+	footer {
+		text-align: center;
+	  padding: 1rem 0;
 	}
 </style>
