@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { kebabCase } from 'lodash-es';
-	import { on } from '@telegram-apps/sdk';
+	import { on, postEvent } from '@telegram-apps/sdk';
 
 	let colors = [];
 
@@ -36,6 +36,10 @@
 
 		const element = document.querySelector('html');
 		colors = getColors(element);
+
+		on('theme_changed', () => {
+	    postEvent('web_app_ready');
+	  });
 	});
 
 	const copy = (color) => {
