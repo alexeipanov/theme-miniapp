@@ -37,7 +37,25 @@
 		const element = document.querySelector('html');
 		colors = getColors(element);
 
-		on('theme_changed', (event) => {
+		MiniApp.onEvent('theme_changed', function() {
+			console.log('theme changed');
+		  const element = document.querySelector('html');
+		  console.log(MiniApp.themeParams());
+	    colors = getColors(element);
+	    console.log(colors);
+	    colors = Object.values(event.theme_params);
+		});
+
+		MiniApp.onEvent('ready', function() {
+			console.log('ready');
+		  const element = document.querySelector('html');
+		  console.log(MiniApp.themeParams());
+	    colors = getColors(element);
+	    
+		});
+
+		on('ready', (event) => {
+			console.log('ready2');
 	    colors = Object.values(event.theme_params);
 	  });
 	});
