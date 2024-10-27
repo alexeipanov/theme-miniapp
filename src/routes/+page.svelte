@@ -15,6 +15,7 @@
 	  'hintColor',
 	  'linkColor',
 	  'secondaryBgColor',
+	  'bottomBarBgColor',
 	  'sectionBgColor',
 	  'sectionHeaderTextColor',
 	  'subtitleTextColor',
